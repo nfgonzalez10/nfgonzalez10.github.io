@@ -1,0 +1,40 @@
+{
+	"name": "Personal-Site",
+	"version": "1.0.0",
+	"description": "Personal site Nicolas Felipe Gonzalez Caro",
+	"repository": "https://github.com/nfgonzalez10/personal-site.git",
+	"author": "Nicolas Felipe Gonzalez Caro",
+	"license": "MIT",
+	"private": true,
+	"devDependencies": {
+		"clean-webpack-plugin": "^3.0.0",
+		"css-loader": "^5.0.1",
+		"eslint": "^7.13.0",
+		"eslint-config-prettier": "^6.15.0",
+		"html-webpack-plugin": "^4.5.0",
+		"husky": "^4.3.0",
+		"prettier": "2.1.2",
+		"pretty-quick": "^3.1.0",
+		"sass": "^1.29.0",
+		"sass-loader": "^10.1.0",
+		"style-loader": "^2.0.0",
+		"webpack": "^5.4.0",
+		"webpack-cli": "^4.2.0",
+		"webpack-dev-server": "^3.11.0"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "pretty-quick --staged"
+		}
+	},
+	"dependencies": {
+		"lodash": "^4.17.20"
+	},
+	"scripts": {
+		"build": "webpack --config webpack.config.js",
+		"watch": "webpack --watch",
+		"start": "webpack serve",
+		"check": "prettier --check .",
+		"write": "prettier --write ."
+	}
+}
