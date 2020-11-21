@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 module.exports = {
 	mode: "development",
 	entry: {
-		app: "./src/index.js",
+		app: "./src/js/index.js",
 	},
 	output: {
 		filename: "[name].bundle.js",
@@ -30,10 +30,14 @@ module.exports = {
 					"sass-loader",
 				],
 			},
+			{
+				test: /\.html$/i,
+				loader: "html-loader",
+			},
 		],
 	},
 	plugins: [
-		new HtmlWebpackPlugin({ title: "Full Stack engineer" }),
-		new CleanWebpackPlugin({}),
+		new CleanWebpackPlugin(),
+		new HtmlWebpackPlugin({ template: "src/index.html" }),
 	],
 };
