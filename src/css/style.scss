@@ -3,19 +3,37 @@ body {
 	font-family: "Hack";
 }
 
+:root {
+	--terminal: #33ff33;
+}
+
 .header {
 	padding: 1rem;
 	background-color: black;
 	height: 5rem;
 	display: flex;
 	flex-direction: row;
+	justify-content: space-between;
+	color: white;
 	&__main {
-		color: white;
 		font-weight: bold;
+		align-self: center;
 		&::after {
 			content: "|";
-			color: #33ff33;
+			color: var(--terminal);
 			animation: blink 1s infinite;
+		}
+	}
+	&__list {
+		align-self: center;
+		display: flex;
+		flex-direction: row;
+		cursor: pointer;
+		& > * {
+			padding: 1rem;
+		}
+		& :hover {
+			color: var(--terminal);
 		}
 	}
 }
@@ -25,8 +43,20 @@ body {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
+	height: 50rem;
 	&__text {
-		color: white;
+		align-self: center;
+		font-size: 2rem;
+		color: aliceblue;
+	}
+}
+
+@keyframes typing {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
 	}
 }
 
