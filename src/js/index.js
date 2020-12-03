@@ -2,6 +2,8 @@ import _ from "lodash";
 import "../css/style.scss";
 import headerHTML from "../components/header.html";
 import mainHTML from "../components/main.html";
+const greetText = "Hi! I'm Nicolas";
+let globalText = "";
 
 function component() {
 	const element = document.createElement("div");
@@ -66,5 +68,33 @@ setTimeout(() => {
 	flagTime = true;
 	setTimeout(() => {
 		clearInterval(intervalMatrix);
-	}, 5000);
-}, 10000);
+		const canvasElement = document.getElementById("canvas");
+		canvasElement.remove();
+		const mainBlock = createMainBlock();
+		root.innerHTML += mainBlock.outerHTML;
+		writeInTerminal();
+	}, 3000);
+}, 6000);
+
+function createMainBlock() {
+	const mainBlock = document.createElement("div");
+	mainBlock.classList.add("main-block");
+	mainBlock.setAttribute("id", "main-block");
+	return mainBlock;
+}
+function writeInTerminal() {
+	console.log(root);
+	const arrayText = greetText.split("");
+	arrayText.forEach((letter, indexLetter) => {
+		setTimeout(() => {
+			const childNode = root.childNodes[2];
+			root.removeChild(childNode);
+			console.log(root.outerHTML);
+			const mainBlock = createMainBlock();
+			globalText += letter;
+			const text = document.createTextNode(globalText);
+			mainBlock.appendChild(text);
+			root.innerHTML += mainBlock.outerHTML;
+		}, 200 * indexLetter);
+	});
+}
