@@ -40,13 +40,11 @@ body {
 
 .main-block {
 	background-color: rgb(3, 3, 3);
-	height: 55rem;
+	height: 40rem;
 	color: aliceblue;
-	font-size: 10rem;
-	&__text {
-		align-self: center;
-		font-size: 2rem;
-	}
+	font-size: 6rem;
+	padding: 10rem 7rem;
+	text-align: center;
 	&::after {
 		content: "|";
 		color: var(--terminal);
@@ -70,4 +68,9 @@ body {
 	100% {
 		opacity: 1;
 	}
+}
+
+.contact {
+	background-color: red;
+	height: 30rem;
 }

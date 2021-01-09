@@ -2,8 +2,10 @@ import _ from "lodash";
 import "../css/style.scss";
 import headerHTML from "../components/header.html";
 import mainHTML from "../components/main.html";
-const greetText = "Hi! I'm Nicolas";
+import contactHTML from "../components/contact.html";
+const greetText = "Hi! I'm Nicolás Full stack developer.";
 let globalText = "";
+let flagbreakLine = false;
 
 function component() {
 	const element = document.createElement("div");
@@ -66,35 +68,43 @@ const intervalMatrix = setInterval(draw, 33);
 
 setTimeout(() => {
 	flagTime = true;
-	setTimeout(() => {
+	setTimeout(async () => {
 		clearInterval(intervalMatrix);
 		const canvasElement = document.getElementById("canvas");
 		canvasElement.remove();
-		const mainBlock = createMainBlock();
-		root.innerHTML += mainBlock.outerHTML;
-		writeInTerminal();
+		await writeInTerminal();
 	}, 3000);
 }, 6000);
 
 function createMainBlock() {
 	const mainBlock = document.createElement("div");
 	mainBlock.classList.add("main-block");
-	mainBlock.setAttribute("id", "main-block");
 	return mainBlock;
 }
-function writeInTerminal() {
+async function writeInTerminal() {
 	console.log(root);
 	const arrayText = greetText.split("");
-	arrayText.forEach((letter, indexLetter) => {
-		setTimeout(() => {
-			const childNode = root.childNodes[2];
-			root.removeChild(childNode);
-			console.log(root.outerHTML);
-			const mainBlock = createMainBlock();
-			globalText += letter;
-			const text = document.createTextNode(globalText);
-			mainBlock.appendChild(text);
-			root.innerHTML += mainBlock.outerHTML;
-		}, 200 * indexLetter);
+	const x = arrayText.map((letter, indexLetter) => {
+		return new Promise((resolve, reject) => {
+			setTimeout(() => {
+				const childNode = root.childNodes[2];
+				root.removeChild(childNode);
+				const mainBlock = createMainBlock();
+				globalText += letter;
+				if (globalText.includes("Nicolás") && !flagbreakLine) {
+					globalText += "<br/>";
+					flagbreakLine = true;
+				}
+				mainBlock.innerHTML = globalText;
+				root.innerHTML += mainBlock.outerHTML;
+				resolve("ok");
+			}, 200 * indexLetter);
+		});
+	});
+
+	Promise.all(x).then((data) => {
+		console.log("DEspues del map", data);
+		root.innerHTML += contactHTML;
+		console.log(root);
 	});
 }
