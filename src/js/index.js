@@ -1,20 +1,14 @@
 import _ from "lodash";
 import "../css/style.scss";
+import Picture1 from "../assets/foto1.jpg";
 import headerHTML from "../components/header.html";
 import mainHTML from "../components/main.html";
 import contactHTML from "../components/contact.html";
+import { createImages } from "./utils";
+
 const greetText = "Hi! I'm Nicolás Full stack developer.";
 let globalText = "";
 let flagbreakLine = false;
-
-function component() {
-	const element = document.createElement("div");
-
-	// Lodash, currently included via a script, is required for this line to work
-	element.innerHTML = _.join(["Hello", "webpack", "hola todos"], " ");
-
-	return element;
-}
 
 // document.body.appendChild(component());
 const root = document.getElementById("root");
@@ -72,7 +66,10 @@ setTimeout(() => {
 		clearInterval(intervalMatrix);
 		const canvasElement = document.getElementById("canvas");
 		canvasElement.remove();
+		const mainBlock = createMainBlock();
+		root.innerHTML += mainBlock.outerHTML;
 		await writeInTerminal();
+		paintfirsImage();
 	}, 3000);
 }, 6000);
 
@@ -81,30 +78,46 @@ function createMainBlock() {
 	mainBlock.classList.add("main-block");
 	return mainBlock;
 }
-async function writeInTerminal() {
-	console.log(root);
-	const arrayText = greetText.split("");
-	const x = arrayText.map((letter, indexLetter) => {
-		return new Promise((resolve, reject) => {
-			setTimeout(() => {
-				const childNode = root.childNodes[2];
-				root.removeChild(childNode);
-				const mainBlock = createMainBlock();
-				globalText += letter;
-				if (globalText.includes("Nicolás") && !flagbreakLine) {
-					globalText += "<br/>";
-					flagbreakLine = true;
-				}
-				mainBlock.innerHTML = globalText;
-				root.innerHTML += mainBlock.outerHTML;
-				resolve("ok");
-			}, 200 * indexLetter);
-		});
-	});
 
-	Promise.all(x).then((data) => {
-		console.log("DEspues del map", data);
-		root.innerHTML += contactHTML;
-		console.log(root);
-	});
+const createTextMainBlock = () => {
+	const mainBlock = document.createElement("div");
+	mainBlock.classList.add("main-block__text");
+	return mainBlock;
+};
+async function writeInTerminal() {
+	const arrayText = greetText.split("");
+	return await Promise.all(
+		arrayText.map((letter, indexLetter) => {
+			return new Promise((resolve) => {
+				setTimeout(() => {
+					const childNode = document.getElementsByClassName("main-block__text");
+					childNode.length > 0 &&
+						childNode[0].parentNode.removeChild(childNode[0]);
+					const mainBlock = createTextMainBlock();
+					globalText += letter;
+					if (globalText.includes("Nicolás") && !flagbreakLine) {
+						globalText += "<br/>";
+						flagbreakLine = true;
+					}
+					mainBlock.innerHTML = globalText;
+					const parent = document.getElementsByClassName("main-block");
+					parent[0].appendChild(mainBlock);
+					resolve("ok");
+				}, 200 * indexLetter);
+			});
+		})
+	);
 }
+
+const paintfirsImage = () => {
+	setTimeout(() => {
+		const photo1 = createImages(
+			Picture1,
+			"Nicolás Gonzalez",
+			"Happy Developer"
+		);
+		photo1.classList.add("main-block__image");
+		const parent = document.getElementsByClassName("main-block");
+		parent[0].appendChild(photo1);
+	}, 5000);
+};
