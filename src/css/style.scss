@@ -8,50 +8,32 @@ body {
 }
 
 .header {
-	padding: 1rem;
-	background-color: black;
-	height: 5rem;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	color: white;
-	&__main {
-		font-weight: bold;
-		align-self: center;
-		&::after {
-			content: "|";
-			color: var(--terminal);
-			animation: blink 1s infinite;
-		}
-	}
-	&__list {
-		align-self: center;
-		display: flex;
-		flex-direction: row;
-		cursor: pointer;
-		& > * {
-			padding: 1rem;
-		}
-		& :hover {
-			color: var(--terminal);
-		}
-	}
+	display: none;
 }
 
 .main-block {
 	background-color: rgb(3, 3, 3);
-	height: 40rem;
 	color: aliceblue;
-	font-size: 6rem;
-	padding: 10rem 7rem;
-	text-align: center;
-	&::after {
-		content: "|";
-		color: var(--terminal);
-		animation: blink 1.5s infinite;
+	font-size: 2.5rem;
+	height: 30rem;
+	padding: 11rem 3rem;
+	text-align: left;
+	&__text {
+		&::after {
+			content: "|";
+			color: var(--terminal);
+			animation: blink 1.5s infinite;
+		}
 	}
 }
 
+.contact {
+	background-color: red;
+	height: 30rem;
+}
+
+@keyframes images {
+}
 @keyframes typing {
 	from {
 		width: 0;
@@ -70,7 +52,38 @@ body {
 	}
 }
 
-.contact {
-	background-color: red;
-	height: 30rem;
+@media screen and (min-width: 76.8rem) {
+	.main-block {
+		font-size: 6rem;
+		text-align: center;
+		height: 40rem;
+		padding: 10rem 7rem;
+		&__image {
+			width: 25rem;
+			height: 25rem;
+			border: transparent 0.1rem;
+			border-radius: 50%;
+		}
+	}
+	.header {
+		padding: 1rem;
+		background-color: black;
+		height: 5rem;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		color: white;
+		&__main {
+			font-weight: bold;
+			align-self: center;
+			&::after {
+				content: "|";
+				color: var(--terminal);
+				animation: blink 1s infinite;
+			}
+		}
+		&__list {
+			display: none;
+		}
+	}
 }
