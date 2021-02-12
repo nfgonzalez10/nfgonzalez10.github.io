@@ -110,14 +110,10 @@ async function writeInTerminal() {
 }
 
 const paintfirsImage = () => {
+	const photo1 = createImages(Picture1, "Nicolás Gonzalez", "Happy Developer");
+	photo1.classList.add("main-block__image");
+	const parent = document.getElementsByClassName("main-block");
 	setTimeout(() => {
-		const photo1 = createImages(
-			Picture1,
-			"Nicolás Gonzalez",
-			"Happy Developer"
-		);
-		photo1.classList.add("main-block__image");
-		const parent = document.getElementsByClassName("main-block");
 		parent[0].appendChild(photo1);
-	}, 5000);
+	}, 500);
 };

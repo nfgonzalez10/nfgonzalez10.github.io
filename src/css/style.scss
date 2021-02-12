@@ -15,15 +15,27 @@ body {
 	background-color: rgb(3, 3, 3);
 	color: aliceblue;
 	font-size: 2.5rem;
-	height: 30rem;
-	padding: 11rem 3rem;
+	height: 35rem;
+	padding: 8rem 3rem;
 	text-align: left;
+	display: flex;
+	flex-direction: column;
 	&__text {
 		&::after {
 			content: "|";
 			color: var(--terminal);
 			animation: blink 1.5s infinite;
 		}
+	}
+	&__image {
+		align-self: center;
+		width: 10rem;
+		height: 10rem;
+		border: transparent 0.1rem;
+		border-radius: 50%;
+		position: relative;
+		animation: images 5s ease-in-out 0s 1 normal none;
+		margin-top: 2.5rem;
 	}
 }
 
@@ -33,6 +45,16 @@ body {
 }
 
 @keyframes images {
+	0% {
+		top: -30rem;
+	}
+	50% {
+		top: 150px;
+	}
+
+	100% {
+		top: 0px;
+	}
 }
 @keyframes typing {
 	from {
@@ -56,13 +78,11 @@ body {
 	.main-block {
 		font-size: 6rem;
 		text-align: center;
-		height: 40rem;
-		padding: 10rem 7rem;
+		height: 50rem;
+		padding: 2rem 7rem;
 		&__image {
 			width: 25rem;
 			height: 25rem;
-			border: transparent 0.1rem;
-			border-radius: 50%;
 		}
 	}
 	.header {
