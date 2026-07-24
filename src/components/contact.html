@@ -1,1 +1,65 @@
-<div class="contact"></div>
+<section class="section contact container" id="contact">
+	<div class="section__label-col">
+		<h2 class="section__label">Contact</h2>
+	</div>
+	<div class="section__body">
+		<h3 class="contact__intro">
+			Let's discuss the next evolution of your stack.
+		</h3>
+		<form class="contact__form">
+			<div class="contact__form-row">
+				<div class="form-field">
+					<label class="form-field__label" for="contact-name">Name</label>
+					<input
+						class="form-field__input"
+						id="contact-name"
+						name="name"
+						placeholder="Jane Doe"
+						type="text"
+					/>
+				</div>
+				<div class="form-field">
+					<label class="form-field__label" for="contact-email">Email</label>
+					<input
+						class="form-field__input"
+						id="contact-email"
+						name="email"
+						placeholder="jane@example.com"
+						type="email"
+					/>
+				</div>
+			</div>
+			<div class="form-field">
+				<label class="form-field__label" for="contact-message">Message</label>
+				<textarea
+					class="form-field__input form-field__input--textarea"
+					id="contact-message"
+					name="message"
+					placeholder="Describe the architectural challenge..."
+					rows="4"
+				></textarea>
+			</div>
+			<button class="btn btn--primary" type="submit">
+				Send Inquiry
+				<span class="material-symbols-outlined btn__icon">send</span>
+			</button>
+		</form>
+		<div class="contact__details">
+			<div class="contact__detail">
+				<p class="contact__detail-label">Email</p>
+				<a
+					class="contact__detail-value"
+					href="mailto:nicolas.gonzalez@forge.com"
+					>nicolas.gonzalez@forge.com</a
+				>
+			</div>
+			<div class="contact__detail">
+				<p class="contact__detail-label">Social</p>
+				<div class="contact__socials">
+					<a class="contact__detail-value" href="#">LinkedIn</a>
+					<a class="contact__detail-value" href="#">GitHub</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

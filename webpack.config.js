@@ -13,7 +13,7 @@ module.exports = {
 	},
 	devtool: "inline-source-map",
 	devServer: {
-		contentBase: "./docs",
+		static: "./docs",
 		port: 9000,
 		open: true,
 	},

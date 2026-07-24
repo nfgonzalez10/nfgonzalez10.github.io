@@ -1,1 +1,221 @@
-<canvas id="canvas"></canvas>
+<main class="content container">
+	<!-- Hero -->
+	<section class="section hero">
+		<h1 class="hero__name">Nicolás González</h1>
+		<p class="hero__role">Full-Stack Software Engineer</p>
+		<p class="hero__description">
+			Building resilient systems at the intersection of performance and
+			scalability. Transitioning into Software Architecture with a focus on
+			high-integrity distributed systems.
+		</p>
+		<div class="hero__actions">
+			<a class="hero__link hero__link--primary" href="#projects"
+				>View my work</a
+			>
+			<a class="hero__link" href="#contact">Get in touch</a>
+		</div>
+	</section>
+
+	<hr class="divider" />
+
+	<!-- About -->
+	<section class="section about">
+		<div class="section__label-col">
+			<h2 class="section__label">About</h2>
+		</div>
+		<div class="section__body">
+			<p class="about__text">
+				With over 5 years of professional experience, I am currently at
+				<strong>Forge</strong> in Bogotá, where I architect and implement
+				critical infrastructure components. My journey is defined by a deep
+				curiosity for how large-scale systems behave under pressure.
+			</p>
+			<div class="about__photo-slot"></div>
+			<blockquote class="about__quote">
+				"I believe code is a liability, but architecture is an asset. My focus
+				is on reducing cognitive load for developers while ensuring system
+				longevity through Java, Kubernetes, and Rust."
+			</blockquote>
+		</div>
+	</section>
+
+	<hr class="divider" />
+
+	<!-- Approach -->
+	<section class="section approach">
+		<h2 class="section__label">Architectural Approach</h2>
+		<div class="approach__grid">
+			<div class="approach__card">
+				<span class="material-symbols-outlined approach__icon">balance</span>
+				<h3 class="approach__title">Tradeoff Analysis</h3>
+				<p class="approach__desc">
+					Every technical decision is a choice between constraints. I prioritize
+					long-term maintainability over short-term velocity.
+				</p>
+			</div>
+			<div class="approach__card">
+				<span class="material-symbols-outlined approach__icon">layers</span>
+				<h3 class="approach__title">Scalability First</h3>
+				<p class="approach__desc">
+					Designing systems that handle 10x growth without a full rewrite. Focus
+					on statelessness and distributed patterns.
+				</p>
+			</div>
+			<div class="approach__card">
+				<span class="material-symbols-outlined approach__icon">shield</span>
+				<h3 class="approach__title">Observability</h3>
+				<p class="approach__desc">
+					A system is only as good as its telemetry. Implementation of rigorous
+					logging, metrics, and tracing cycles.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<hr class="divider" />
+
+	<!-- Skills -->
+	<section class="section skills" id="skills">
+		<div class="section__label-col">
+			<h2 class="section__label">Technical Stack</h2>
+		</div>
+		<div class="skills__grid">
+			<div class="skills__group">
+				<h4 class="skills__group-title">Languages</h4>
+				<ul class="skills__list">
+					<li>Java (Spring Boot)</li>
+					<li>Rust (Tokio, Axum)</li>
+					<li>TypeScript / Node.js</li>
+					<li>Go (Microservices)</li>
+				</ul>
+			</div>
+			<div class="skills__group">
+				<h4 class="skills__group-title">Infrastructure</h4>
+				<ul class="skills__list">
+					<li>Kubernetes &amp; Docker</li>
+					<li>AWS (EKS, RDS, S3)</li>
+					<li>Terraform / IaC</li>
+					<li>GitHub Actions CI/CD</li>
+				</ul>
+			</div>
+			<div class="skills__group">
+				<h4 class="skills__group-title">Databases</h4>
+				<ul class="skills__list">
+					<li>PostgreSQL</li>
+					<li>Redis (Caching)</li>
+					<li>Elasticsearch</li>
+					<li>MongoDB</li>
+				</ul>
+			</div>
+			<div class="skills__group">
+				<h4 class="skills__group-title">Practices</h4>
+				<ul class="skills__list">
+					<li>Domain-Driven Design</li>
+					<li>TDD / Property Testing</li>
+					<li>Event Sourcing</li>
+					<li>gRPC &amp; Protobuf</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<hr class="divider" />
+
+	<!-- Experience -->
+	<section class="section timeline" id="experience">
+		<h2 class="section__label">Professional Trajectory</h2>
+		<div class="timeline__list">
+			<div class="timeline__item">
+				<div class="timeline__dot timeline__dot--current"></div>
+				<div class="timeline__header">
+					<h3 class="timeline__role">Software Engineer @ Forge</h3>
+					<span class="timeline__date">Jan 2022 — Present</span>
+				</div>
+				<p class="timeline__desc">
+					Leading the transition from a monolithic architecture to a
+					service-mesh based ecosystem in Bogotá. Reduced latency by 40% through
+					Rust-based sidecar implementation.
+				</p>
+			</div>
+			<div class="timeline__item">
+				<div class="timeline__dot"></div>
+				<div class="timeline__header">
+					<h3 class="timeline__role">Full-Stack Developer @ TechNova</h3>
+					<span class="timeline__date">2019 — 2021</span>
+				</div>
+				<p class="timeline__desc">
+					Developed high-concurrency fintech applications using Spring Boot and
+					React. Spearheaded the adoption of automated end-to-end testing.
+				</p>
+			</div>
+			<div class="timeline__item">
+				<div class="timeline__dot"></div>
+				<div class="timeline__header">
+					<h3 class="timeline__role">Junior Developer @ StartStream</h3>
+					<span class="timeline__date">2018 — 2019</span>
+				</div>
+				<p class="timeline__desc">
+					Initial immersion into professional software development, focusing on
+					internal tooling and RESTful API maintenance.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<hr class="divider" />
+
+	<!-- Projects -->
+	<section class="section projects" id="projects">
+		<h2 class="section__label">Selected Projects</h2>
+		<div class="projects__grid">
+			<article class="project">
+				<div class="project__image-wrap">
+					<img
+						class="project__image"
+						alt="A clean, minimalist screenshot of a technical dashboard with sophisticated line charts and system health metrics."
+						src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2ilwOydFU0jliw0OVZ7EXTU-H8IVFIco3G0Xvy1VE5oW8e1PEAw37zjyHjjp4nuPp6fYXOvYKkPnvj8dtcXC0Zdiq_QIVWv0swoqQOZ-Kv4ShW_hBMcXEsv75DHdgP-J7W6vDvcbbqi685SQjZI9CniUq_YAZybv5GLhzPJFOinyPR5RDo90RAB5LcdS9MqYzb3m59l8sUqzeq6xAXKVlKW0Xxo_VxO8fsNSZT1fXdY6ty-dTtilTP11mCK4zHmZXBfTCEyGSN0E"
+					/>
+				</div>
+				<h3 class="project__title">
+					Project Zenith
+					<span class="material-symbols-outlined project__link-icon"
+						>arrow_outward</span
+					>
+				</h3>
+				<p class="project__desc">
+					A high-performance observability platform for Kubernetes clusters,
+					written in Rust and Go.
+				</p>
+				<div class="project__tags">
+					<span class="project__tag">Rust</span>
+					<span class="project__tag">GRPC</span>
+					<span class="project__tag">Kubernetes</span>
+				</div>
+			</article>
+			<article class="project">
+				<div class="project__image-wrap">
+					<img
+						class="project__image"
+						alt="A close-up shot of a high-end architectural model made of light wood and glass in a sun-drenched minimalist studio."
+						src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFlUHb2vvNiO4_GgUgALwejxT0E-ss6I84kQ3o6zLvaTUNh89ugz97ESlvY8uULlTwkv6wAfWi2_dJlLRL0xDET2tmL-2C0gBf9yWoTDUr5rCuQUTLsHOHz__l7kCGZcIz-BB7263kNQOwmoDleHNWjJHp-i3iTO7CftQLwswO_iDyaV-AEhMj_9dYIGyI14HHWqMXq5rJUMnkrHVtH8y0pVt0GBwfkJEJnVUOoljjOpbkdXt4Fw2SuaybrhNYTpQWSgLT6sCE6O4"
+					/>
+				</div>
+				<h3 class="project__title">
+					Lattice Core
+					<span class="material-symbols-outlined project__link-icon"
+						>arrow_outward</span
+					>
+				</h3>
+				<p class="project__desc">
+					Custom event-sourcing framework for distributed financial ledgers,
+					built on top of Java 17.
+				</p>
+				<div class="project__tags">
+					<span class="project__tag">Java</span>
+					<span class="project__tag">PostgreSQL</span>
+					<span class="project__tag">Events</span>
+				</div>
+			</article>
+		</div>
+	</section>
+</main>
